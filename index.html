@@ -7,11 +7,13 @@
   <link rel="canonical" href="https://andrewsrp.github.io/index.html">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
   <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  <link href='https://fonts.googleapis.com/css?family=Georgia|Open+Sans|Roboto' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
   <style amp-custom>
-    #wrap{
-      padding-top: 50px;
+    body {
+      font-family: 'Nanum Gothic', sans-serif;
+      background-color: #fff
     }
+    #wrap { padding-top: 50px; }
     #header {
       display: flex;
       position: fixed;
@@ -31,10 +33,8 @@
       border: 0;
       background-color: inherit;
     }
-    #header .home {
-      margin: auto;
-    }
-    #footer:before{
+    #header .home { margin: auto; }
+    #footer:before {
       content: "";
       position: absolute;
       background-color: #ccc;
@@ -46,14 +46,37 @@
     }
     #footer {
       display: flex;
+      font-size: 16px;
       padding: 60px 0;
       position: relative;
+      flex-direction: column;
+    }
+    #footer .footer-menu { margin: auto; }
+    #footer .footer-item { margin-bottom: 10px; }
+    #footer .footer-auth {
+      margin: auto;
+      font-size: 10px;
+      text-align: center;
+    }
+    #sidebar {
+      padding: 0 20px;
+    }
+    #sidebar li {
+      list-style-type: upper-alpha;
+    }
+    #container {
+      padding: 20px;
+      margin: auto;
+      max-width: 800px;
+      width: 100%;
+      box-sizing: border-box;
     }
   </style>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!--https://developers.google.com/analytics/devguides/collection/amp-analytics/-->
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 </head>
 <body>
 <amp-sidebar id="sidebar" layout="nodisplay" side="left">
@@ -76,13 +99,71 @@
     <label>I'm Andrew Park</label>
     <h2>index</h2>
     <ul>
-      <li></li>
+      <li>Info</li>
+      <li>Skill</li>
+      <li>Project</li>
     </ul>
+    <section>
+      <h2>Info</h2>
+      <article>
+        <p>Job: Web Developer</p>
+        <p>Live: Seoul in Republic of Korea</p>
+      </article>
+    </section>
+    <section>
+      <h2>Skill</h2>
+      <article>
+        <h3>Web Framework</h3>
+        <p>
+          Angular 2 / 5
+        </p>
+        <h3>UI Framework</h3>
+        <p>
+          Bootstrap
+        </p>
+      </article>
+    </section>
+    <section>
+      <h2>Project</h2>
+      <article>
+        <amp-carousel width="400"
+                      height="300"
+                      layout="responsive"
+                      type="slides"
+                      autoplay
+                      delay="2000">
+          <amp-img src="/asset/images/image1.jpg"
+                   width="400"
+                   height="300"
+                   layout="responsive"
+                   alt="a sample image"></amp-img>
+          <amp-img src="/asset/images/image2.jpg"
+                   width="400"
+                   height="300"
+                   layout="responsive"
+                   alt="another sample image"></amp-img>
+        </amp-carousel>
+      </article>
+    </section>
   </div>
   <footer id="footer">
-    <div style="margin: auto;">
-      <span>andrew github</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 64.000000 64.000000"><path d="M22.4 1.4C-.8 9-7.4 38.4 10.5 54.9 14.7 58.8 20.4 62 23 62c.5 0 1-1.6 1-3.5 0-3.3-.2-3.5-3.5-3.5-3.5 0-4.2-.5-9-6.6-4.4-5.6-2.3-6.2 3.2-.9 4.2 4 7.5 4.5 9.8 1.2 1.4-2.1 1.4-2.2-.7-3-6-2.3-8.8-4.2-10.2-7.2-2.1-4.3-2.1-12.4 0-15.3.8-1.2 1.2-2.7.9-3.2-1-1.6.5-7 1.8-7 .7 0 2.4.6 3.8 1.4 1.7.9 6 1.4 11.9 1.4s10.2-.5 11.9-1.4c1.4-.8 3.1-1.4 3.8-1.4 1.3 0 2.8 5.4 1.8 7-.3.5.1 2 .9 3.2 1.8 2.5 2.1 10.3.7 14.1-1.4 3.6-5 6.6-9.3 7.8-3.3.9-3.7 1.2-2.8 2.9.5 1 1 4.6 1 7.9 0 3.5.4 6.1 1 6.1 5.2 0 15.8-8.8 19.8-16.5 2.3-4.3 2.7-6.3 2.7-13.5 0-7-.4-9.4-2.4-13.5C57.9 12.2 51.8 6 45.6 3 39.6.2 28.5-.6 22.4 1.4z" class="ampstart-icon"></path></svg>
+    <div class="footer-menu">
+      <div class="footer-item">
+        <a href="https://github.com/AndrewSRP">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-labelledby="simpleicons-github-icon" role="img" viewBox="0 0 24 24"><title id="simpleicons-github-icon">GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          <span>andrew github</span>
+        </a>
+      </div>
+      <div class="footer-item">
+        <a href="https://medium.com/@pks2974">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-labelledby="simpleicons-medium-icon" role="img" viewBox="0 0 24 24"><title id="simpleicons-medium-icon">Medium icon</title><path d="M2.846 6.36c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403H7.26l5.378 11.795 4.728-11.795H24v.403l-1.917 1.837c-.165.126-.247.333-.213.538v13.5c-.034.204.048.41.213.537l1.87 1.837v.403h-9.41v-.403l1.937-1.882c.19-.19.19-.246.19-.538V7.794l-5.39 13.688h-.727L4.278 7.794v9.174c-.052.386.076.774.347 1.053l2.52 3.06v.402H0v-.403l2.52-3.06c.27-.278.39-.67.326-1.052V6.36z"/></svg>
+          <span>andrew blog</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-auth">
+      <div>Mady by Andrew Park</div>
+      <div>Since 2018</div>
     </div>
   </footer>
 </div>
